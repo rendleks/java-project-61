@@ -3,11 +3,23 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Cli {
-    public static String readInput() {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine().trim();
-        scanner.close();
+    private static Scanner sc;
+    private static String userName;
 
-        return input;
+    public static String readInput() {
+        sc = new Scanner(System.in);
+        return  sc.nextLine().trim();
+    }
+
+    public static void setUserName(String name) {
+        userName = name;
+    }
+
+    public static String getUserName() {
+         return userName;
+    }
+
+    public static void close() {
+        sc.close();
     }
 }
