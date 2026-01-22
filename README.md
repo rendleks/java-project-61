@@ -18,3 +18,5 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=rendleks_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=rendleks_java-project-61)
 
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=rendleks_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=rendleks_java-project-61)
+
+[![asciicast](https://asciinema.org/a/770808.svg)](https://asciinema.org/a/770808)
