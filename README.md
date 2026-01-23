@@ -19,4 +19,10 @@
 
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=rendleks_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=rendleks_java-project-61)
 
+
+## Even game demo:
 [![asciicast](https://asciinema.org/a/770808.svg)](https://asciinema.org/a/770808)
+
+
+## Calc game demo:
+[![asciicast](https://asciinema.org/a/BffeczYe0bXkBTvG.svg)](https://asciinema.org/a/BffeczYe0bXkBTvG)
