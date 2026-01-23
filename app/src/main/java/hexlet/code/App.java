@@ -1,11 +1,12 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
-        System.out.print("1 - Greet\n2 - Even\n0 - Exit\n");
+        System.out.print("1 - Greet\n2 - Even\n3 - Cals\n0 - Exit\n");
         System.out.print("Your choice: ");
         Cli userInput = new Cli();
         int choiceSelect = Integer.parseInt(userInput.readInput());
@@ -17,8 +18,29 @@ public class App {
         if (choiceSelect == 2) {
             greeting(userInput);
             Even game = new Even();
-            game.rules();
-            game.startGame(userInput);
+            var questions = new String[3];
+            var answers = new String[3];
+            for (var i = 0; i < 3; i++) {
+                var newGame = new Even();
+                questions[i] = newGame.question();
+                answers[i] = newGame.answer();
+            }
+            Engine engine = new Engine(userInput, game.description(), questions, answers);
+            engine.start();
+        }
+
+        if (choiceSelect == 3) {
+            greeting(userInput);
+            Calc game = new Calc();
+            var questions = new String[3];
+            var answers = new String[3];
+            for (var i = 0; i < 3; i++) {
+                var newGame = new Calc();
+                questions[i] = newGame.question();
+                answers[i] = newGame.answer();
+            }
+            Engine engine = new Engine(userInput, game.description(), questions, answers);
+            engine.start();
         }
 
         if (choiceSelect == 0) {
