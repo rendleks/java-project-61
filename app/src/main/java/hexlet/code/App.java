@@ -17,82 +17,85 @@ public class App {
         Cli userInput = new Cli();
         int choiceSelect = Integer.parseInt(userInput.readInput());
 
-        if (choiceSelect == 1) {
-            greeting(userInput);
-        }
-
-        if (choiceSelect == 2) {
-            greeting(userInput);
-            Even game = new Even();
-            var questions = new String[3];
-            var answers = new String[3];
-            for (var i = 0; i < 3; i++) {
-                var newGame = new Even();
-                questions[i] = newGame.question();
-                answers[i] = newGame.answer();
-            }
-            Engine engine = new Engine(userInput, game.description(), questions, answers);
-            engine.start();
-        }
-
-        if (choiceSelect == 3) {
-            greeting(userInput);
-            Calc game = new Calc();
-            var questions = new String[3];
-            var answers = new String[3];
-            for (var i = 0; i < 3; i++) {
-                var newGame = new Calc();
-                questions[i] = newGame.question();
-                answers[i] = newGame.answer();
-            }
-            Engine engine = new Engine(userInput, game.description(), questions, answers);
-            engine.start();
-        }
-
-        if (choiceSelect == 4) {
-            greeting(userInput);
-            Gcd game = new Gcd();
-            var questions = new String[3];
-            var answers = new String[3];
-            for (var i = 0; i < 3; i++) {
-                var newGame = new Gcd();
-                questions[i] = newGame.question();
-                answers[i] = newGame.answer();
-            }
-            Engine engine = new Engine(userInput, game.description(), questions, answers);
-            engine.start();
-        }
-
-        if (choiceSelect == 5) {
-            greeting(userInput);
-            Progression game = new Progression();
-            var questions = new String[3];
-            var answers = new String[3];
-            for (var i = 0; i < 3; i++) {
-                var newGame = new Progression();
-                questions[i] = newGame.question();
-                answers[i] = newGame.answer();
-            }
-            Engine engine = new Engine(userInput, game.description(), questions, answers);
-            engine.start();
-        }
-
-        if (choiceSelect == 6) {
-            greeting(userInput);
-            Prime game = new Prime();
-            var questions = new String[3];
-            var answers = new String[3];
-            for (var i = 0; i < 3; i++) {
-                var newGame = new Prime();
-                questions[i] = newGame.question();
-                answers[i] = newGame.answer();
-            }
-            Engine engine = new Engine(userInput, game.description(), questions, answers);
-            engine.start();
-        }
-
-        if (choiceSelect == 0) {
-            System.exit(0);
+        switch (choiceSelect) {
+            case 0:
+                System.exit(0);
+                return;
+            case 1:
+                greeting(userInput);
+                return;
+            case 2:
+                greeting(userInput);
+                var questionsEven = new String[3];
+                var answersEven = new String[3];
+                var evenGame = new Even();
+                questionsEven[0] = evenGame.question();
+                answersEven[0] = evenGame.answer();
+                questionsEven[1] = evenGame.question();
+                answersEven[1] = evenGame.answer();
+                questionsEven[2] = evenGame.question();
+                answersEven[2] = evenGame.answer();
+                Engine engineEven = new Engine(userInput, evenGame.description(), questionsEven, answersEven);
+                engineEven.start();
+                return;
+            case 3:
+                greeting(userInput);
+                var questionsCalc = new String[3];
+                var answersCalc = new String[3];
+                var calcGame = new Calc();
+                questionsCalc[0] = calcGame.question();
+                answersCalc[0] = calcGame.answer();
+                questionsCalc[1] = calcGame.question();
+                answersCalc[1] = calcGame.answer();
+                questionsCalc[2] = calcGame.question();
+                answersCalc[2] = calcGame.answer();
+                Engine engineCalc = new Engine(userInput, calcGame.description(), questionsCalc, answersCalc);
+                engineCalc.start();
+                return;
+            case 4:
+                greeting(userInput);
+                var questionsGcd = new String[3];
+                var answersGcd = new String[3];
+                var gcdGame = new Gcd();
+                questionsGcd[0] = gcdGame.question();
+                answersGcd[0] = gcdGame.answer();
+                questionsGcd[1] = gcdGame.question();
+                answersGcd[1] = gcdGame.answer();
+                questionsGcd[2] = gcdGame.question();
+                answersGcd[2] = gcdGame.answer();
+                Engine engineGcd = new Engine(userInput, gcdGame.description(), questionsGcd, answersGcd);
+                engineGcd.start();
+                return;
+            case 5:
+                greeting(userInput);
+                var questionsProgression = new String[3];
+                var answersProgression = new String[3];
+                var progressionGame = new Progression();
+                questionsProgression[0] = progressionGame.question();
+                answersProgression[0] = progressionGame.answer();
+                questionsProgression[1] = progressionGame.question();
+                answersProgression[1] = progressionGame.answer();
+                questionsProgression[2] = progressionGame.question();
+                answersProgression[2] = progressionGame.answer();
+                Engine engineProgression = new Engine(userInput, progressionGame.description(), questionsProgression, answersProgression);
+                engineProgression.start();
+                return;
+            case 6:
+                greeting(userInput);
+                var questionsPrime = new String[3];
+                var answersPrime = new String[3];
+                var primeGame = new Prime();
+                questionsPrime[0] = primeGame.question();
+                answersPrime[0] = primeGame.answer();
+                questionsPrime[1] = primeGame.question();
+                answersPrime[1] = primeGame.answer();
+                questionsPrime[2] = primeGame.question();
+                answersPrime[2] = primeGame.answer();
+                Engine enginePrime = new Engine(userInput, primeGame.description(), questionsPrime, answersPrime);
+                enginePrime.start();
+                return;
+            default:
+                System.exit(0);
         }
 
         userInput.close();
