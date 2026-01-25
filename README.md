@@ -23,7 +23,6 @@
 ## Even game demo:
 [![asciicast](https://asciinema.org/a/770808.svg)](https://asciinema.org/a/770808)
 
-
 ## Calc game demo:
 [![asciicast](https://asciinema.org/a/BffeczYe0bXkBTvG.svg)](https://asciinema.org/a/BffeczYe0bXkBTvG)
 
@@ -32,3 +31,6 @@
 
 ## Progression game demo:
 [![asciicast](https://asciinema.org/a/8wrml1Kg5kzgNL8z.svg)](https://asciinema.org/a/8wrml1Kg5kzgNL8z)
+
+## Prime game demo:
+[![asciicast](https://asciinema.org/a/wjiNOPzYkx0d2MCW.svg)](https://asciinema.org/a/wjiNOPzYkx0d2MCW)
