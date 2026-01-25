@@ -26,3 +26,6 @@
 
 ## Calc game demo:
 [![asciicast](https://asciinema.org/a/BffeczYe0bXkBTvG.svg)](https://asciinema.org/a/BffeczYe0bXkBTvG)
+
+## GCD game demo:
+[![asciicast](https://asciinema.org/a/sLpNNMPxuMtAxBpi.svg)](https://asciinema.org/a/sLpNNMPxuMtAxBpi)
