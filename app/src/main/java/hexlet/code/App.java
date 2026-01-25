@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 public class App {
     public static void main(String[] args) {
@@ -14,6 +11,7 @@ public class App {
                 "3 - Cals\n" +
                 "4 - GCD\n" +
                 "5 - Progression\n" +
+                "6 - Prime\n" +
                 "0 - Exit\n");
         System.out.print("Your choice: ");
         Cli userInput = new Cli();
@@ -72,6 +70,20 @@ public class App {
             var answers = new String[3];
             for (var i = 0; i < 3; i++) {
                 var newGame = new Progression();
+                questions[i] = newGame.question();
+                answers[i] = newGame.answer();
+            }
+            Engine engine = new Engine(userInput, game.description(), questions, answers);
+            engine.start();
+        }
+
+        if (choiceSelect == 6) {
+            greeting(userInput);
+            Prime game = new Prime();
+            var questions = new String[3];
+            var answers = new String[3];
+            for (var i = 0; i < 3; i++) {
+                var newGame = new Prime();
                 questions[i] = newGame.question();
                 answers[i] = newGame.answer();
             }
