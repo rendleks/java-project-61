@@ -29,12 +29,11 @@ public class App {
                 var questionsEven = new String[3];
                 var answersEven = new String[3];
                 var evenGame = new Even();
-                questionsEven[0] = evenGame.question();
-                answersEven[0] = evenGame.answer();
-                questionsEven[1] = evenGame.question();
-                answersEven[1] = evenGame.answer();
-                questionsEven[2] = evenGame.question();
-                answersEven[2] = evenGame.answer();
+                for (var i = 0; i < 3; i++) {
+                    var game = new Even();
+                    questionsEven[i] = game.question();
+                    answersEven[i] = game.answer();
+                }
                 Engine engineEven = new Engine(userInput, evenGame.description(), questionsEven, answersEven);
                 engineEven.start();
                 return;
@@ -43,12 +42,11 @@ public class App {
                 var questionsCalc = new String[3];
                 var answersCalc = new String[3];
                 var calcGame = new Calc();
-                questionsCalc[0] = calcGame.question();
-                answersCalc[0] = calcGame.answer();
-                questionsCalc[1] = calcGame.question();
-                answersCalc[1] = calcGame.answer();
-                questionsCalc[2] = calcGame.question();
-                answersCalc[2] = calcGame.answer();
+                for (var i = 0; i < 3; i++) {
+                    var game = new Calc();
+                    questionsCalc[i] = game.question();
+                    answersCalc[i] = game.answer();
+                }
                 Engine engineCalc = new Engine(userInput, calcGame.description(), questionsCalc, answersCalc);
                 engineCalc.start();
                 return;
@@ -57,12 +55,11 @@ public class App {
                 var questionsGcd = new String[3];
                 var answersGcd = new String[3];
                 var gcdGame = new Gcd();
-                questionsGcd[0] = gcdGame.question();
-                answersGcd[0] = gcdGame.answer();
-                questionsGcd[1] = gcdGame.question();
-                answersGcd[1] = gcdGame.answer();
-                questionsGcd[2] = gcdGame.question();
-                answersGcd[2] = gcdGame.answer();
+                for (var i = 0; i < 3; i++) {
+                    var game = new Gcd();
+                    questionsGcd[i] = game.question();
+                    answersGcd[i] = game.answer();
+                }
                 Engine engineGcd = new Engine(userInput, gcdGame.description(), questionsGcd, answersGcd);
                 engineGcd.start();
                 return;
@@ -71,12 +68,11 @@ public class App {
                 var questionsProgression = new String[3];
                 var answersProgression = new String[3];
                 var progressionGame = new Progression();
-                questionsProgression[0] = progressionGame.question();
-                answersProgression[0] = progressionGame.answer();
-                questionsProgression[1] = progressionGame.question();
-                answersProgression[1] = progressionGame.answer();
-                questionsProgression[2] = progressionGame.question();
-                answersProgression[2] = progressionGame.answer();
+                for (var i = 0; i < 3; i++) {
+                    var game = new Progression();
+                    questionsProgression[i] = game.question();
+                    answersProgression[i] = game.answer();
+                }
                 Engine engineProgression = new Engine(userInput, progressionGame.description(), questionsProgression, answersProgression);
                 engineProgression.start();
                 return;
@@ -85,12 +81,11 @@ public class App {
                 var questionsPrime = new String[3];
                 var answersPrime = new String[3];
                 var primeGame = new Prime();
-                questionsPrime[0] = primeGame.question();
-                answersPrime[0] = primeGame.answer();
-                questionsPrime[1] = primeGame.question();
-                answersPrime[1] = primeGame.answer();
-                questionsPrime[2] = primeGame.question();
-                answersPrime[2] = primeGame.answer();
+                for (var i = 0; i < 3; i++) {
+                    var game = new Prime();
+                    questionsPrime[i] = game.question();
+                    answersPrime[i] = game.answer();
+                }
                 Engine enginePrime = new Engine(userInput, primeGame.description(), questionsPrime, answersPrime);
                 enginePrime.start();
                 return;
@@ -102,8 +97,8 @@ public class App {
     }
 
     public  static void greeting(Cli userInput) {
-        System.out.println(
-                "Welcome to the Brain Games!\n" +
+        System.out.print(
+                "\nWelcome to the Brain Games!\n" +
                 "May I have your name? "
         );
         String name = Cli.readInput();
