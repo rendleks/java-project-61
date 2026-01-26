@@ -103,7 +103,7 @@ public class App {
 
     public  static void greeting(Cli userInput) {
         System.out.println("\nWelcome to the Brain Games!");
-        System.out.print("May I have you name? ");
+        System.out.print("May I have your name? ");
         String name = Cli.readInput();
         userInput.setUserName(name);
         System.out.println("Hello, " + name + "!");
