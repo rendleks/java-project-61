@@ -1,5 +1,4 @@
 plugins {
-    id("java")
     application
     checkstyle
     id("org.sonarqube") version "7.2.2.6593"
@@ -13,16 +12,6 @@ application { mainClass.set("hexlet.code.App") }
 
 repositories {
     mavenCentral()
-}
-
-dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 tasks.getByName("run", JavaExec::class) {
