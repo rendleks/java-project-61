@@ -23,6 +23,8 @@ public class Calc {
             case 2:
                 result = randomNumber1 - randomNumber2;
                 break;
+            default:
+                break;
         }
 
         return randomNumber1 + operation[randomOperation] + randomNumber2;

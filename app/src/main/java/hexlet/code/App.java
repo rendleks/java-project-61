@@ -1,18 +1,22 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.print(
-                "1 - Greet\n" +
-                "2 - Even\n" +
-                "3 - Cals\n" +
-                "4 - GCD\n" +
-                "5 - Progression\n" +
-                "6 - Prime\n" +
-                "0 - Exit\n");
+                "1 - Greet\n"
+                + "2 - Even\n"
+                + "3 - Cals\n"
+                + "4 - GCD\n"
+                + "5 - Progression\n"
+                + "6 - Prime\n"
+                + "0 - Exit\n");
         System.out.print("Your choice: ");
         Cli userInput = new Cli();
         int choiceSelect = Integer.parseInt(userInput.readInput());
@@ -73,7 +77,11 @@ public class App {
                     questionsProgression[i] = game.question();
                     answersProgression[i] = game.answer();
                 }
-                Engine engineProgression = new Engine(userInput, progressionGame.description(), questionsProgression, answersProgression);
+                Engine engineProgression = new Engine(
+                        userInput,
+                        progressionGame.description(),
+                        questionsProgression,
+                        answersProgression);
                 engineProgression.start();
                 return;
             case 6:
@@ -98,8 +106,8 @@ public class App {
 
     public  static void greeting(Cli userInput) {
         System.out.print(
-                "\nWelcome to the Brain Games!\n" +
-                "May I have your name? "
+                "\nWelcome to the Brain Games!\n"
+                + "May I have your name? "
         );
         String name = Cli.readInput();
         userInput.setUserName(name);

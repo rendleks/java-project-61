@@ -16,7 +16,7 @@ public class Cli {
     }
 
     public static String getUserName() {
-         return userName;
+        return userName;
     }
 
     public static void close() {

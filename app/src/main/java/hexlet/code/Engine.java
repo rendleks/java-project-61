@@ -6,7 +6,7 @@ public class Engine {
     private static String[] questionEven;
     private static String[] answerEven;
 
-    Engine(Cli user, String descriptionGame, String[] question, String[] answer ) {
+    Engine(Cli user, String descriptionGame, String[] question, String[] answer) {
         this.user = user;
         this.descriptionGame = descriptionGame;
         this.questionEven = question;
