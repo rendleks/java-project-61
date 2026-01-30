@@ -1,13 +1,13 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public class Engine {
-    private static Cli user;
     private static String descriptionGame;
     private static String[] questionEven;
     private static String[] answerEven;
 
-    Engine(Cli user, String descriptionGame, String[] question, String[] answer) {
-        this.user = user;
+    Engine(String descriptionGame, String[] question, String[] answer) {
         this.descriptionGame = descriptionGame;
         this.questionEven = question;
         this.answerEven = answer;
@@ -17,6 +17,13 @@ public class Engine {
         int countCorrectAnswer = 0;
         int numberOfAttempts = 0;
 
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Welcome to the Brain Games!");
+		System.out.print("May I have your name? ");
+		String userName = scanner.next();
+		System.out.println("Hello, " + userName + "!");
+
         System.out.println(descriptionGame);
 
         while (numberOfAttempts < 3) {
@@ -24,7 +31,7 @@ public class Engine {
             var correctAnswer = answerEven[numberOfAttempts];
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
-            String userResponse = user.readInput();
+            String userResponse = scanner.next();
 
             if (userResponse.equals(correctAnswer)) {
                 countCorrectAnswer++;
@@ -39,7 +46,7 @@ public class Engine {
                         + correctAnswer
                         + "'."
                         + "\nLet's try again, "
-                        + user.getUserName()
+                        + userName
                         + "!"
                 );
             }
@@ -47,7 +54,7 @@ public class Engine {
         }
 
         if (countCorrectAnswer == 3) {
-            System.out.println("Congratulations, " + user.getUserName() + "!");
+            System.out.println("Congratulations, " + userName + "!");
         }
     }
 }
