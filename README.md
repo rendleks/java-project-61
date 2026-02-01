@@ -3,12 +3,17 @@
 
 A project for simple console games.
 
+## Setup
+
+```bash
+make build
+```
+
 ## Run
 
 ```bash
-make run-build
+make run
 ```
-
 
 ## Even game demo:
 [![asciicast](https://asciinema.org/a/770808.svg)](https://asciinema.org/a/770808)
