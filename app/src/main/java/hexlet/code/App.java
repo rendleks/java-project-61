@@ -33,6 +33,10 @@ public class App {
             case "2":
                 break;
             case "3":
+				Calc gameCalc = new Calc();
+				gameCalc.start();
+				Engine engineCalc = new Engine(gameCalc.description(), gameCalc.getQuestions(), gameCalc.getAnswers());
+				engineCalc.start();
                 break;
             case "4":
                 break;

@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Engine {
     private static String descriptionGame;
-    private static String[] questionEven;
-    private static String[] answerEven;
+    private static String[] questions;
+    private static String[] answers;
 
-    Engine(String descriptionGame, String[] question, String[] answer) {
+    Engine(String descriptionGame, String[] questions, String[] answers) {
         this.descriptionGame = descriptionGame;
-        this.questionEven = question;
-        this.answerEven = answer;
+        this.questions = questions;
+        this.answers = answers;
     }
 
     public static void start() {
@@ -19,7 +19,7 @@ public class Engine {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Welcome to the Brain Games!");
+		System.out.println("\nWelcome to the Brain Games!");
 		System.out.print("May I have your name? ");
 		String userName = scanner.next();
 		System.out.println("Hello, " + userName + "!");
@@ -27,8 +27,8 @@ public class Engine {
         System.out.println(descriptionGame);
 
         while (numberOfAttempts < 3) {
-            var question = questionEven[numberOfAttempts];
-            var correctAnswer = answerEven[numberOfAttempts];
+            var question = questions[numberOfAttempts];
+            var correctAnswer = answers[numberOfAttempts];
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String userResponse = scanner.next();

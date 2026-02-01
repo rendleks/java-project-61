@@ -2,37 +2,46 @@ package hexlet.code.games;
 
 public class Calc {
 
-    private static int result;
+	private static String[] questions = new String[3];
+	private static String[] answers = new String[3];
+
     public static String description() {
         return "What is the result of the expression?";
     }
 
-    public static String question() {
-        int randomNumber1 = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-        int randomNumber2 = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-        int randomOperation = (int) Math.floor(Math.random() * (3 - 0 + 0)) + 0;
-        String[] operation = {" * ", " + ", " - "};
+	public static void start() {
 
-        switch (randomOperation) {
-            case 0:
-                result = randomNumber1 * randomNumber2;
-                break;
-            case 1:
-                result = randomNumber1 + randomNumber2;
-                break;
-            case 2:
-                result = randomNumber1 - randomNumber2;
-                break;
-            default:
-                break;
-        }
+		for (var i = 0; i < 3; i++) {
+			int randomNumber1 = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+			int randomNumber2 = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+			int randomOperation = (int) Math.floor(Math.random() * (3 - 0 + 0)) + 0;
+			String[] operation = {" * ", " + ", " - "};
+			int result = 0;
 
-        return randomNumber1 + operation[randomOperation] + randomNumber2;
+			switch (randomOperation) {
+				case 0:
+					result = randomNumber1 * randomNumber2;
+					break;
+				case 1:
+					result = randomNumber1 + randomNumber2;
+					break;
+				case 2:
+					result = randomNumber1 - randomNumber2;
+					break;
+				default:
+					break;
+			}
 
-    }
+			questions[i] = randomNumber1 + operation[randomOperation] + randomNumber2;;
+			answers[i] = Integer.toString(result);
+		}
+	}
 
-    public static String answer() {
-        return Integer.toString(result);
-    }
+	public static String[] getQuestions() {
+		return questions;
+	}
 
+	public static String[] getAnswers() {
+		return answers;
+	}
 }
