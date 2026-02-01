@@ -31,6 +31,10 @@ public class App {
 				Cli.greet();
                 break;
             case "2":
+                Even gameEven = new Even();
+                gameEven.start();
+                Engine engineEven = new Engine(gameEven.description(), gameEven.getQuestions(), gameEven.getAnswers());
+                engineEven.start();
                 break;
             case "3":
 				Calc gameCalc = new Calc();
@@ -39,10 +43,22 @@ public class App {
 				engineCalc.start();
                 break;
             case "4":
+                Gcd gameGcd = new Gcd();
+                gameGcd.start();
+                Engine engineGcd = new Engine(gameGcd.description(), gameGcd.getQuestions(), gameGcd.getAnswers());
+                engineGcd.start();
                 break;
             case "5":
-				break;
+                Progression gameProgression = new Progression();
+                gameProgression.start();
+                Engine engineProgression = new Engine(gameProgression.description(), gameProgression.getQuestions(), gameProgression.getAnswers());
+                engineProgression.start();
+                break;
             case "6":
+                Prime gamePrime = new Prime();
+                gamePrime.start();
+                Engine enginePrime = new Engine(gamePrime.description(), gamePrime.getQuestions(), gamePrime.getAnswers());
+                enginePrime.start();
                 break;
             default:
 				throw new RuntimeException("Unknown input: " + selectedGame);

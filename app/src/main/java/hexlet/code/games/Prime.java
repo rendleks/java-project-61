@@ -2,21 +2,20 @@ package hexlet.code.games;
 
 
 public class Prime {
-    private static int num;
+
+    private static String[] questions = new String[3];
+    private static String[] answers = new String[3];
 
     public static String description() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    public static String question() {
-        int randomNumber = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-        num = randomNumber;
-
-        return Integer.toString(randomNumber);
-    }
-
-    public static String answer() {
-        return isSimple(num) ? "yes" : "no";
+    public static void start() {
+        for (var i = 0; i < 3; i++) {
+            int randomNumber = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+            questions[i] = Integer.toString(randomNumber);
+            answers[i] = isSimple(randomNumber) ? "yes" : "no";
+        }
     }
 
     public static Boolean isSimple(int number) {
@@ -39,5 +38,13 @@ public class Prime {
         }
 
         return true;
+    }
+
+    public static String[] getQuestions() {
+        return questions;
+    }
+
+    public static String[] getAnswers() {
+        return answers;
     }
 }
