@@ -20,50 +20,70 @@ public class App {
                 + "6 - Prime\n"
                 + "0 - Exit\n");
         System.out.print("Your choice: ");
-		Scanner scanner = new Scanner(System.in);
-		String selectedGame = scanner.next();
+        Scanner scanner = new Scanner(System.in);
+        String selectedGame = scanner.next();
 
         switch (selectedGame) {
-			case "0":
+            case "0":
                 System.exit(0);
                 return;
-			case "1":
-				Cli.greet();
+            case "1":
+                Cli.greet();
                 break;
             case "2":
                 Even gameEven = new Even();
                 gameEven.start();
-                Engine engineEven = new Engine(gameEven.description(), gameEven.getQuestions(), gameEven.getAnswers());
+                Engine engineEven = new Engine(
+                        gameEven.description(),
+                        gameEven.getQuestions(),
+                        gameEven.getAnswers()
+                );
                 engineEven.start();
                 break;
             case "3":
-				Calc gameCalc = new Calc();
-				gameCalc.start();
-				Engine engineCalc = new Engine(gameCalc.description(), gameCalc.getQuestions(), gameCalc.getAnswers());
-				engineCalc.start();
+                Calc gameCalc = new Calc();
+                gameCalc.start();
+                Engine engineCalc = new Engine(
+                        gameCalc.description(),
+                        gameCalc.getQuestions(),
+                        gameCalc.getAnswers()
+                );
+                engineCalc.start();
                 break;
             case "4":
                 Gcd gameGcd = new Gcd();
                 gameGcd.start();
-                Engine engineGcd = new Engine(gameGcd.description(), gameGcd.getQuestions(), gameGcd.getAnswers());
+                Engine engineGcd = new Engine(
+                        gameGcd.description(),
+                        gameGcd.getQuestions(),
+                        gameGcd.getAnswers()
+                );
                 engineGcd.start();
                 break;
             case "5":
                 Progression gameProgression = new Progression();
                 gameProgression.start();
-                Engine engineProgression = new Engine(gameProgression.description(), gameProgression.getQuestions(), gameProgression.getAnswers());
+                Engine engineProgression = new Engine(
+                        gameProgression.description(),
+                        gameProgression.getQuestions(),
+                        gameProgression.getAnswers()
+                );
                 engineProgression.start();
                 break;
             case "6":
                 Prime gamePrime = new Prime();
                 gamePrime.start();
-                Engine enginePrime = new Engine(gamePrime.description(), gamePrime.getQuestions(), gamePrime.getAnswers());
+                Engine enginePrime = new Engine(
+                        gamePrime.description(),
+                        gamePrime.getQuestions(),
+                        gamePrime.getAnswers()
+                );
                 enginePrime.start();
                 break;
             default:
-				throw new RuntimeException("Unknown input: " + selectedGame);
-		}
+                throw new RuntimeException("Unknown input: " + selectedGame);
+        }
 
-		scanner.close();
+        scanner.close();
     }
 }
