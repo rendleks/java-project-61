@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+
 import java.util.StringJoiner;
 
 public class Progression {
@@ -16,26 +17,24 @@ public class Progression {
             int randomNumberStart = (int) Math.floor(Math.random() * (50 - 10 + 10)) + 10;
             int randomStep = (int) Math.floor(Math.random() * (30 - 1 + 1)) + 1;
 
-            String progressionQuestion = progressionString(randomNumberStart, randomStep, randomNumberDelete);
+            var progressionQuestion = progressionString(randomNumberStart, randomStep);
+            var replaceChar = progressionQuestion.split(" ")[randomNumberDelete];
 
-            questions[i] = progressionQuestion;
-            answers[i] = progressionQuestion.split(" ")[randomNumberDelete];
+            questions[i] = progressionQuestion.replace(replaceChar, "..");
+            answers[i] = replaceChar;
         }
     }
 
-    public static String progressionString(int start, int step, int delete) {
-        StringJoiner numbersSequence = new StringJoiner(" ");
+    public static String progressionString(int start, int step) {
+
+        var result = new StringJoiner(" ");
 
         for (var j = 0; j < 10; j++) {
             var currentNum = start + j * step;
-            if (delete == j) {
-                numbersSequence.add("..");
-            } else {
-                numbersSequence.add(String.valueOf(currentNum));
-            }
+            result.add(Integer.toString(currentNum));
         }
 
-        return numbersSequence.toString();
+        return result.toString();
     }
 
     public static String[] getQuestions() {

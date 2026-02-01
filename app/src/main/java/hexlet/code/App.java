@@ -85,5 +85,6 @@ public class App {
         }
 
         scanner.close();
+        System.exit(0);
     }
 }
