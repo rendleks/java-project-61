@@ -45,10 +45,8 @@ public class Engine {
                         + "'"
                         + correctAnswer
                         + "'."
-                        + "\nLet's try again, "
-                        + userName
-                        + "!"
                 );
+                System.out.println("Let's try again, " + userName + "!");
             }
             numberOfAttempts++;
         }
