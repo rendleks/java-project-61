@@ -16,21 +16,26 @@ public class Progression {
             int randomNumberStart = (int) Math.floor(Math.random() * (50 - 10 + 10)) + 10;
             int randomStep = (int) Math.floor(Math.random() * (30 - 1 + 1)) + 1;
 
-            StringJoiner numbersSequence = new StringJoiner(" ");
-            int answer = 0;
-            for (var j = 0; j < 10; j++) {
-                var currentNum = randomNumberStart + j * randomStep;
-                if (randomNumberDelete == j) {
-                    answer = currentNum;
-                    numbersSequence.add("..");
-                } else {
-                    numbersSequence.add(String.valueOf(currentNum));
-                }
-            }
+            String progressionQuestion = progressionString(randomNumberStart, randomStep, randomNumberDelete);
 
-            questions[i] = numbersSequence.toString();
-            answers[i] = Integer.toString(answer);
+            questions[i] = progressionQuestion;
+            answers[i] = progressionQuestion.split(" ")[randomNumberDelete];
         }
+    }
+
+    public static String progressionString(int start, int step, int delete) {
+        StringJoiner numbersSequence = new StringJoiner(" ");
+
+        for (var j = 0; j < 10; j++) {
+            var currentNum = start + j * step;
+            if (delete == j) {
+                numbersSequence.add("..");
+            } else {
+                numbersSequence.add(String.valueOf(currentNum));
+            }
+        }
+
+        return numbersSequence.toString();
     }
 
     public static String[] getQuestions() {

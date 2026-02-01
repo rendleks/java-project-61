@@ -20,18 +20,21 @@ public class Gcd {
             questionString.append(randomNumber2);
 
             questions[i] = questionString.toString();
-
-            while (true) {
-                var temp = randomNumber1;
-                randomNumber1 = randomNumber2;
-                randomNumber2 = temp % randomNumber1;
-                if (randomNumber2 == 0) {
-                    break;
-                }
-            }
-
-            answers[i] = String.valueOf(randomNumber1);
+            answers[i] = String.valueOf(greatestCommonDivisor(randomNumber1, randomNumber2));
         }
+    }
+
+    public static int greatestCommonDivisor(int num1, int num2) {
+        while (true) {
+            var temp = num1;
+            num1 = num2;
+            num2 = temp % num1;
+            if (num2 == 0) {
+                break;
+            }
+        }
+
+        return num1;
     }
 
     public static String[] getQuestions() {

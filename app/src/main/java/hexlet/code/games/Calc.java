@@ -28,7 +28,7 @@ public class Calc {
                     result = randomNumber1 - randomNumber2;
                     break;
                 default:
-                    break;
+                    throw new RuntimeException("Unknown input: " + randomOperation);
             }
 
             questions[i] = randomNumber1 + operation[randomOperation] + randomNumber2;

@@ -18,7 +18,7 @@ public class Prime {
         }
     }
 
-    public static Boolean isSimple(int number) {
+    public static boolean isSimple(int number) {
         if (number < 2 || number == 2) {
             return true;
         }
