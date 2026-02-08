@@ -46,7 +46,6 @@ public class Engine {
         }
 
         scanner.close();
-        System.exit(0);
     }
 
 }
