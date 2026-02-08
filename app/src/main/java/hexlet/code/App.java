@@ -25,7 +25,6 @@ public class App {
 
         switch (selectedGame) {
             case "0":
-                System.exit(0);
                 break;
             case "1":
                 Cli.greet();
