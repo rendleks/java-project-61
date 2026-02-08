@@ -1,50 +1,44 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+import static hexlet.code.util.Random.generateNumber;
 
 public class Prime {
-
-    private static String[] questions = new String[3];
-    private static String[] answers = new String[3];
-
-    public static String description() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
-
-    public static void start() {
-        for (var i = 0; i < 3; i++) {
-            int randomNumber = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-            questions[i] = Integer.toString(randomNumber);
-            answers[i] = isSimple(randomNumber) ? "yes" : "no";
-        }
-    }
-
-    public static boolean isSimple(int number) {
-        if (number < 2 || number == 2) {
-            return true;
-        }
-
-        if (number % 2 == 0) {
+    private static boolean isPrime(int number) {
+        if (number < 2) {
             return false;
         }
 
-        var maxDevisor = (int) Math.sqrt(number);
-        var i = 3;
-
-        while (i <= maxDevisor) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
             }
-            i++;
         }
 
         return true;
     }
 
-    public static String[] getQuestions() {
-        return questions;
+    private static String[] generateRoundData() {
+        var min = 1;
+        var max = 20;
+
+        var number = generateNumber(min, max);
+
+        var question = Integer.toString(number);
+        var answer = isPrime(number) ? "yes" : "no";
+
+        return new String[] {question, answer};
     }
 
-    public static String[] getAnswers() {
-        return answers;
+    public static void runGame() {
+        final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[][] roundsData = new String[3][2];
+
+        for (int i = 0; i < 3; i++) {
+            roundsData[i] = generateRoundData();
+        }
+
+        Engine.run(description, roundsData);
     }
+
 }

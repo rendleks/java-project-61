@@ -3,19 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static String descriptionGame;
-    private static String[] questions;
-    private static String[] answers;
+    private static final int ROUNDS = 3;
 
-    Engine(String descriptionGame, String[] questions, String[] answers) {
-        this.descriptionGame = descriptionGame;
-        this.questions = questions;
-        this.answers = answers;
-    }
-
-    public static void start() {
+    public static void run(String desriptionGame, String[][] quiz) {
         int countCorrectAnswer = 0;
-        int numberOfAttempts = 0;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -24,11 +15,11 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
 
-        System.out.println(descriptionGame);
+        System.out.println(desriptionGame);
 
-        while (numberOfAttempts < 3) {
-            var question = questions[numberOfAttempts];
-            var correctAnswer = answers[numberOfAttempts];
+        for (var round = 0; round < ROUNDS; round++) {
+            var question = quiz[round][0];
+            var correctAnswer = quiz[round][1];
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String userResponse = scanner.next();
@@ -48,11 +39,14 @@ public class Engine {
                 );
                 System.out.println("Let's try again, " + userName + "!");
             }
-            numberOfAttempts++;
         }
 
         if (countCorrectAnswer == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
+
+        scanner.close();
+        System.exit(0);
     }
+
 }

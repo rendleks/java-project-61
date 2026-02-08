@@ -1,29 +1,13 @@
 package hexlet.code.games;
 
 
+import hexlet.code.Engine;
+
 import java.util.StringJoiner;
 
+import static hexlet.code.util.Random.generateNumber;
+
 public class Progression {
-    private static String[] questions = new String[3];
-    private static String[] answers = new String[3];
-
-    public static String description() {
-        return "What number is missing in the progression?";
-    }
-
-    public static void start() {
-        for (var i = 0; i < 3; i++) {
-            int randomNumberDelete = (int) Math.floor(Math.random() * (9 - 0 + 0)) + 0;
-            int randomNumberStart = (int) Math.floor(Math.random() * (50 - 10 + 10)) + 10;
-            int randomStep = (int) Math.floor(Math.random() * (30 - 1 + 1)) + 1;
-
-            var progressionQuestion = progressionString(randomNumberStart, randomStep);
-            var replaceChar = progressionQuestion.split(" ")[randomNumberDelete];
-
-            questions[i] = progressionQuestion.replace(replaceChar, "..");
-            answers[i] = replaceChar;
-        }
-    }
 
     public static String progressionString(int start, int step) {
 
@@ -37,11 +21,32 @@ public class Progression {
         return result.toString();
     }
 
-    public static String[] getQuestions() {
-        return questions;
+    private static String[] generateRoundData() {
+        var min = 1;
+        var max = 100;
+
+        var start = generateNumber(min, max);
+        var step = generateNumber(3, 40);
+        var deleteNumber = generateNumber(0, 9);
+
+        var progressionQuestion = progressionString(start, step);
+        var replaceChar = progressionQuestion.split(" ")[deleteNumber];
+
+        var question = progressionQuestion.replace(replaceChar, "..");
+        var answer = replaceChar;
+
+
+        return new String[] {question, answer};
     }
 
-    public static String[] getAnswers() {
-        return answers;
+    public static void runGame() {
+        final var description = "What number is missing in the progression?";
+        String[][] roundsData = new String[3][2];
+
+        for (int i = 0; i < 3; i++) {
+            roundsData[i] = generateRoundData();
+        }
+
+        Engine.run(description, roundsData);
     }
 }

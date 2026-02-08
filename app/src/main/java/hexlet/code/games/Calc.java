@@ -1,46 +1,57 @@
 package hexlet.code.games;
 
+import  hexlet.code.Engine;
+
+import static hexlet.code.util.Random.generateNumber;
+
 public class Calc {
-    private static String[] questions = new String[3];
-    private static String[] answers = new String[3];
 
-    public static String description() {
-        return "What is the result of the expression?";
+    private static String randomOperation() {
+        String[] operation = {"*", "+", "-"};
+        var randomNumber = generateNumber(0, 2);
+
+        return operation[randomNumber];
     }
 
-    public static void start() {
+    private static String[] generateRoundData() {
+        var min = 1;
+        var max = 20;
 
-        for (var i = 0; i < 3; i++) {
-            int randomNumber1 = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-            int randomNumber2 = (int) Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-            int randomOperation = (int) Math.floor(Math.random() * (3 - 0 + 0)) + 0;
-            String[] operation = {" * ", " + ", " - "};
-            int result = 0;
+        var number1 = generateNumber(min, max);
+        var number2 = generateNumber(min, max);
+        var operation = randomOperation();
 
-            switch (randomOperation) {
-                case 0:
-                    result = randomNumber1 * randomNumber2;
-                    break;
-                case 1:
-                    result = randomNumber1 + randomNumber2;
-                    break;
-                case 2:
-                    result = randomNumber1 - randomNumber2;
-                    break;
-                default:
-                    throw new RuntimeException("Unknown input: " + randomOperation);
-            }
+        var question = number1 + " " + operation + " " + number2;
 
-            questions[i] = randomNumber1 + operation[randomOperation] + randomNumber2;
-            answers[i] = Integer.toString(result);
+        int result;
+
+        switch (operation) {
+            case "*":
+                result = number1 * number2;
+                break;
+            case "+":
+                result = number1 + number2;
+                break;
+            case "-":
+                result = number1 - number2;
+                break;
+            default:
+                throw new RuntimeException("Unknown input: " + operation);
         }
+
+        var answer = Integer.toString(result);
+
+        return new String[] {question, answer};
     }
 
-    public static String[] getQuestions() {
-        return questions;
-    }
+    public static void runGame() {
+        final var description = "What is the result of the expression?";
+        String[][] roundsData = new String[3][2];
 
-    public static String[] getAnswers() {
-        return answers;
+        for (int i = 0; i < 3; i++) {
+            roundsData[i] = generateRoundData();
+        }
+
+        Engine.run(description, roundsData);
     }
 }

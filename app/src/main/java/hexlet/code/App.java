@@ -32,53 +32,23 @@ public class App {
                 break;
             case "2":
                 Even gameEven = new Even();
-                gameEven.start();
-                Engine engineEven = new Engine(
-                        gameEven.description(),
-                        gameEven.getQuestions(),
-                        gameEven.getAnswers()
-                );
-                engineEven.start();
+                gameEven.runGame();
                 break;
             case "3":
                 Calc gameCalc = new Calc();
-                gameCalc.start();
-                Engine engineCalc = new Engine(
-                        gameCalc.description(),
-                        gameCalc.getQuestions(),
-                        gameCalc.getAnswers()
-                );
-                engineCalc.start();
+                gameCalc.runGame();
                 break;
             case "4":
                 Gcd gameGcd = new Gcd();
-                gameGcd.start();
-                Engine engineGcd = new Engine(
-                        gameGcd.description(),
-                        gameGcd.getQuestions(),
-                        gameGcd.getAnswers()
-                );
-                engineGcd.start();
+                gameGcd.runGame();
                 break;
             case "5":
                 Progression gameProgression = new Progression();
-                gameProgression.start();
-                Engine engineProgression = new Engine(
-                        gameProgression.description(),
-                        gameProgression.getQuestions(),
-                        gameProgression.getAnswers()
-                );
-                engineProgression.start();
+                gameProgression.runGame();
                 break;
             case "6":
                 Prime gamePrime = new Prime();
-                gamePrime.start();
-                Engine enginePrime = new Engine(
-                        gamePrime.description(),
-                        gamePrime.getQuestions(),
-                        gamePrime.getAnswers()
-                );
-                enginePrime.start();
+                gamePrime.runGame();
                 break;
             default:
                 throw new RuntimeException("Unknown input: " + selectedGame);
