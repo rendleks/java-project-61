@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Engine {
@@ -38,6 +39,7 @@ public class Engine {
                         + "'."
                 );
                 System.out.println("Let's try again, " + userName + "!");
+                return;
             }
         }
 
