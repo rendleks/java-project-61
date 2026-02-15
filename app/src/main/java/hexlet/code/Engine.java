@@ -44,6 +44,10 @@ public class Engine {
         if (countCorrectAnswer == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> feafb35e751e2ac9571ff7e28187532dc847c244
     }
 
 }
