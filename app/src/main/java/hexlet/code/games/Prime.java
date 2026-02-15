@@ -1,11 +1,12 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
 import static hexlet.code.util.Random.generateNumber;
 
 public class Prime {
-	private static final int MAX_NUMBER = 20;
-	private static final int COUNT_ROUNDS = 3;
+    private static final int MAX_NUMBER = 20;
+    private static final int COUNT_ROUNDS = 3;
 
     private static boolean isPrime(int number) {
         if (number < 2) {
@@ -27,7 +28,7 @@ public class Prime {
         var question = Integer.toString(number);
         var answer = isPrime(number) ? "yes" : "no";
 
-        return new String[] {question, answer};
+        return new String[]{question, answer};
     }
 
     public static void runGame() {

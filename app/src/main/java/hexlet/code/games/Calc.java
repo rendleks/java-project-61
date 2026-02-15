@@ -1,12 +1,12 @@
 package hexlet.code.games;
 
-import  hexlet.code.Engine;
+import hexlet.code.Engine;
 
 import static hexlet.code.util.Random.generateNumber;
 
 public class Calc {
-	private static final int MAX_NUMBER = 20;
-	private static final int COUNT_ROUNDS = 3;
+    private static final int MAX_NUMBER = 20;
+    private static final int COUNT_ROUNDS = 3;
 
     private static String randomOperation() {
         String[] operation = {"*", "+", "-"};
@@ -40,7 +40,7 @@ public class Calc {
 
         var answer = Integer.toString(result);
 
-        return new String[] {question, answer};
+        return new String[]{question, answer};
     }
 
     public static void runGame() {

@@ -5,8 +5,8 @@ import hexlet.code.Engine;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Gcd {
-	private static final int MAX_NUMBER = 20;
-	private static final int COUNT_ROUNDS = 3;
+    private static final int MAX_NUMBER = 20;
+    private static final int COUNT_ROUNDS = 3;
 
     public static int greatestCommonDivisor(int num1, int num2) {
         while (true) {
@@ -32,7 +32,7 @@ public class Gcd {
         var question = number1 + " " + number2;
         var answer = String.valueOf(greatestDevisor);
 
-        return new String[] {question, answer};
+        return new String[]{question, answer};
     }
 
 

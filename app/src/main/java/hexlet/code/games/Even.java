@@ -5,8 +5,8 @@ import hexlet.code.Engine;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Even {
-	private static final int MAX_NUMBER = 20;
-	private static final int COUNT_ROUNDS = 3;
+    private static final int MAX_NUMBER = 20;
+    private static final int COUNT_ROUNDS = 3;
 
     private static boolean isEven(int num) {
         return num % 2 == 0;
@@ -19,7 +19,7 @@ public class Even {
         var question = Integer.toString(number);
         var answer = isEven(number) ? "yes" : "no";
 
-        return new String[] {question, answer};
+        return new String[]{question, answer};
     }
 
     public static void runGame() {
