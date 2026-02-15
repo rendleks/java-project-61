@@ -13,7 +13,6 @@ public class Progression {
     private static final int MAX_NUMBER_FOR_STEP = 40;
     private static final int MAX_NUMBER_FOR_DELETE = 9;
     private static final int COUNT_ROUNDS = 3;
-    private static final int COUNT_ROWS = 9;
 
     public static String progressionString(int start, int step) {
 
@@ -45,7 +44,7 @@ public class Progression {
 
     public static void runGame() {
         final var description = "What number is missing in the progression?";
-        String[][] roundsData = new String[COUNT_ROWS][2];
+        String[][] roundsData = new String[COUNT_ROUNDS][2];
 
         for (int i = 0; i < COUNT_ROUNDS; i++) {
             roundsData[i] = generateRoundData();

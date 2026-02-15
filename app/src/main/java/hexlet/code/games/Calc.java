@@ -5,6 +5,8 @@ import  hexlet.code.Engine;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Calc {
+	private static final int MAX_NUMBER = 20;
+	private static final int COUNT_ROUNDS = 3;
 
     private static String randomOperation() {
         String[] operation = {"*", "+", "-"};
@@ -14,11 +16,8 @@ public class Calc {
     }
 
     private static String[] generateRoundData() {
-        var min = 1;
-        var max = 20;
-
-        var number1 = generateNumber(min, max);
-        var number2 = generateNumber(min, max);
+        var number1 = generateNumber(MAX_NUMBER);
+        var number2 = generateNumber(MAX_NUMBER);
         var operation = randomOperation();
 
         var question = number1 + " " + operation + " " + number2;
@@ -46,9 +45,9 @@ public class Calc {
 
     public static void runGame() {
         final var description = "What is the result of the expression?";
-        String[][] roundsData = new String[3][2];
+        String[][] roundsData = new String[COUNT_ROUNDS][2];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < COUNT_ROUNDS; i++) {
             roundsData[i] = generateRoundData();
         }
 

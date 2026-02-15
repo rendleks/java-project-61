@@ -5,6 +5,9 @@ import hexlet.code.Engine;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Gcd {
+	private static final int MAX_NUMBER = 20;
+	private static final int COUNT_ROUNDS = 3;
+
     public static int greatestCommonDivisor(int num1, int num2) {
         while (true) {
             var temp = num1;
@@ -20,11 +23,9 @@ public class Gcd {
 
 
     private static String[] generateRoundData() {
-        var min = 1;
-        var max = 20;
 
-        var number1 = generateNumber(min, max);
-        var number2 = generateNumber(min, max);
+        var number1 = generateNumber(MAX_NUMBER);
+        var number2 = generateNumber(MAX_NUMBER);
 
         var greatestDevisor = greatestCommonDivisor(number1, number2);
 
@@ -37,9 +38,9 @@ public class Gcd {
 
     public static void runGame() {
         final var description = "Find the greatest common divisor of given numbers.";
-        String[][] roundsData = new String[3][2];
+        String[][] roundsData = new String[COUNT_ROUNDS][2];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < COUNT_ROUNDS; i++) {
             roundsData[i] = generateRoundData();
         }
 

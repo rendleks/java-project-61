@@ -4,6 +4,9 @@ import hexlet.code.Engine;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Prime {
+	private static final int MAX_NUMBER = 20;
+	private static final int COUNT_ROUNDS = 3;
+
     private static boolean isPrime(int number) {
         if (number < 2) {
             return false;
@@ -19,10 +22,7 @@ public class Prime {
     }
 
     private static String[] generateRoundData() {
-        var min = 1;
-        var max = 20;
-
-        var number = generateNumber(min, max);
+        var number = generateNumber(MAX_NUMBER);
 
         var question = Integer.toString(number);
         var answer = isPrime(number) ? "yes" : "no";
@@ -32,9 +32,9 @@ public class Prime {
 
     public static void runGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] roundsData = new String[3][2];
+        String[][] roundsData = new String[COUNT_ROUNDS][2];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < COUNT_ROUNDS; i++) {
             roundsData[i] = generateRoundData();
         }
 
