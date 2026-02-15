@@ -8,12 +8,18 @@ import java.util.StringJoiner;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Progression {
+    private static final int MAX_NUMBER_IN_PROGRESSION = 10;
+    private static final int MIN_NUMBER_FOR_STEP = 3;
+    private static final int MAX_NUMBER_FOR_STEP = 40;
+    private static final int MAX_NUMBER_FOR_DELETE = 9;
+    private static final int COUNT_ROUNDS = 3;
+    private static final int COUNT_ROWS = 9;
 
     public static String progressionString(int start, int step) {
 
         var result = new StringJoiner(" ");
 
-        for (var j = 0; j < 10; j++) {
+        for (var j = 0; j < MAX_NUMBER_IN_PROGRESSION; j++) {
             var currentNum = start + j * step;
             result.add(Integer.toString(currentNum));
         }
@@ -22,12 +28,10 @@ public class Progression {
     }
 
     private static String[] generateRoundData() {
-        var min = 1;
-        var max = 100;
 
-        var start = generateNumber(min, max);
-        var step = generateNumber(3, 40);
-        var deleteNumber = generateNumber(0, 9);
+        var start = generateNumber();
+        var step = generateNumber(MIN_NUMBER_FOR_STEP, MAX_NUMBER_FOR_STEP);
+        var deleteNumber = generateNumber(0, MAX_NUMBER_FOR_DELETE);
 
         var progressionQuestion = progressionString(start, step);
         var replaceChar = progressionQuestion.split(" ")[deleteNumber];
@@ -41,9 +45,9 @@ public class Progression {
 
     public static void runGame() {
         final var description = "What number is missing in the progression?";
-        String[][] roundsData = new String[3][2];
+        String[][] roundsData = new String[COUNT_ROWS][2];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < COUNT_ROUNDS; i++) {
             roundsData[i] = generateRoundData();
         }
 

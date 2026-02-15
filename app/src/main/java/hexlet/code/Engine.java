@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Engine {
@@ -43,7 +42,7 @@ public class Engine {
             }
         }
 
-        if (countCorrectAnswer == 3) {
+        if (countCorrectAnswer == ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
