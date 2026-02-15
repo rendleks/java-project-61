@@ -44,9 +44,6 @@ public class Engine {
         if (countCorrectAnswer == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
-
-        scanner.close();
-        System.exit(0);
     }
 
 }
