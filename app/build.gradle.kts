@@ -18,6 +18,10 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
+checkstyle {
+    toolVersion = "10.12.0"
+}
+
 sonar {
     properties {
         property("sonar.projectKey", "rendleks_java-project-61")
