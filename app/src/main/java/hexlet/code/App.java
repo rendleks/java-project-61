@@ -52,7 +52,5 @@ public class App {
             default:
                 throw new RuntimeException("Unknown input: " + selectedGame);
         }
-
-        scanner.close();
     }
 }
