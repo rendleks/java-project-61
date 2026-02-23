@@ -8,6 +8,8 @@ import java.util.StringJoiner;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Progression {
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 100;
     private static final int MAX_NUMBER_IN_PROGRESSION = 10;
     private static final int MIN_NUMBER_FOR_STEP = 3;
     private static final int MAX_NUMBER_FOR_STEP = 40;
@@ -28,7 +30,7 @@ public class Progression {
 
     private static String[] generateRoundData() {
 
-        var start = generateNumber();
+        var start = generateNumber(MIN_NUMBER, MAX_NUMBER);
         var step = generateNumber(MIN_NUMBER_FOR_STEP, MAX_NUMBER_FOR_STEP);
         var deleteNumber = generateNumber(0, MAX_NUMBER_FOR_DELETE);
 

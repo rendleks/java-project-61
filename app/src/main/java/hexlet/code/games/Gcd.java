@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 import static hexlet.code.util.Random.generateNumber;
 
 public class Gcd {
+    private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 20;
     private static final int COUNT_ROUNDS = 3;
 
@@ -24,8 +25,8 @@ public class Gcd {
 
     private static String[] generateRoundData() {
 
-        var number1 = generateNumber(MAX_NUMBER);
-        var number2 = generateNumber(MAX_NUMBER);
+        var number1 = generateNumber(MIN_NUMBER, MAX_NUMBER);
+        var number2 = generateNumber(MIN_NUMBER, MAX_NUMBER);
 
         var greatestDevisor = greatestCommonDivisor(number1, number2);
 

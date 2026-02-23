@@ -6,6 +6,7 @@ import static hexlet.code.util.Random.generateNumber;
 
 public class Calc {
     private static final int MAX_NUMBER = 20;
+    private static final int MIN_NUMBER = 1;
     private static final int COUNT_ROUNDS = 3;
 
     private static String randomOperation() {
@@ -16,8 +17,8 @@ public class Calc {
     }
 
     private static String[] generateRoundData() {
-        var number1 = generateNumber(MAX_NUMBER);
-        var number2 = generateNumber(MAX_NUMBER);
+        var number1 = generateNumber(MIN_NUMBER, MAX_NUMBER);
+        var number2 = generateNumber(MIN_NUMBER, MAX_NUMBER);
         var operation = randomOperation();
 
         var question = number1 + " " + operation + " " + number2;
