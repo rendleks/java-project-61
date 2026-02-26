@@ -16,7 +16,7 @@ public class Calc {
         return operation[randomNumber];
     }
 
-    private static int resultOfOperation (int num1, int num2, String operation) {
+    private static int resultOfOperation(int num1, int num2, String operation) {
         switch (operation) {
             case "*":
                 return num1 * num2;
