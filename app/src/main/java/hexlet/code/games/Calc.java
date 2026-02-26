@@ -16,29 +16,27 @@ public class Calc {
         return operation[randomNumber];
     }
 
+    private static int resultOfOperation (int num1, int num2, String operation) {
+        switch (operation) {
+            case "*":
+                return num1 * num2;
+            case "+":
+                return num1 + num2;
+            case "-":
+                return num1 - num2;
+            default:
+                throw new RuntimeException("Unknown input: " + operation);
+        }
+    }
+
     private static String[] generateRoundData() {
         var number1 = generateNumber(MIN_NUMBER, MAX_NUMBER);
         var number2 = generateNumber(MIN_NUMBER, MAX_NUMBER);
         var operation = randomOperation();
 
+        var result = resultOfOperation(number1, number2, operation);
+
         var question = number1 + " " + operation + " " + number2;
-
-        int result;
-
-        switch (operation) {
-            case "*":
-                result = number1 * number2;
-                break;
-            case "+":
-                result = number1 + number2;
-                break;
-            case "-":
-                result = number1 - number2;
-                break;
-            default:
-                throw new RuntimeException("Unknown input: " + operation);
-        }
-
         var answer = Integer.toString(result);
 
         return new String[]{question, answer};
