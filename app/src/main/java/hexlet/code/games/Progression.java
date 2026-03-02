@@ -3,8 +3,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.StringJoiner;
-
 import static hexlet.code.util.Random.generateNumber;
 
 public class Progression {
