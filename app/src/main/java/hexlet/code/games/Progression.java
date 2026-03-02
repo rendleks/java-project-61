@@ -16,16 +16,16 @@ public class Progression {
     private static final int MAX_NUMBER_FOR_DELETE = 9;
     private static final int COUNT_ROUNDS = 3;
 
-    public static String progressionString(int start, int step) {
+    public static String[] progressionString(int start, int step) {
 
-        var result = new StringJoiner(" ");
+        var result = new String[MAX_NUMBER_IN_PROGRESSION];
 
         for (var j = 0; j < MAX_NUMBER_IN_PROGRESSION; j++) {
             var currentNum = start + j * step;
-            result.add(Integer.toString(currentNum));
+            result[j] = Integer.toString(currentNum);
         }
 
-        return result.toString();
+        return result;
     }
 
     private static String[] generateRoundData() {
@@ -34,12 +34,11 @@ public class Progression {
         var step = generateNumber(MIN_NUMBER_FOR_STEP, MAX_NUMBER_FOR_STEP);
         var deleteNumber = generateNumber(0, MAX_NUMBER_FOR_DELETE);
 
-        var progressionQuestion = progressionString(start, step);
-        var replaceChar = progressionQuestion.split(" ")[deleteNumber];
+        var progression = progressionString(start, step);
+        var answer = progression[deleteNumber];
 
-        var question = progressionQuestion.replace(replaceChar, "..");
-        var answer = replaceChar;
-
+        progression[deleteNumber] = "..";
+        var question = String.join(" ", progression);
 
         return new String[] {question, answer};
     }
